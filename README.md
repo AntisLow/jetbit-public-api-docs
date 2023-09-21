@@ -62,11 +62,11 @@ Please check the `Permissions` before calling the API.
 * [GET /v1/spot-user-assets](#get-v1spot-user-assets)
 * [GET /v1/depth/:asset](#get-v1depth)
 * [GET /v1/data-feed/:asset](#get-v1data-feedasset)
+* [GET /v1/trade/info/:asset](#get-v1tradeinfoasset)
 * [GET /v1/spot-order/transaction/asset-list](#get-v1spot-ordertransactionasset-list)
 * [GET /v1/spot-order/transaction/pending-waiting](#get-v1spot-ordertransactionpending-waiting)
 * [GET /v1/spot-order/transaction/finished-canceled](#get-v1spot-ordertransactionfinished-canceled)
 * [GET /v1/spot-order/transaction/trade-history](#get-v1spot-ordertransactiontrade-history)
-* [GET /v1/trade/info/:asset](#get-v1tradeinfoasset)
 
 #### POST
 * [POST /v1/process-order-market-buy](#post-v1process-order-market-buy)
@@ -371,6 +371,34 @@ asset | yes | STRING
 }
 ```
 
+### GET /v1/trade/info/:asset
+#### Description
+Get trade info.
+
+#### params
+name | mandatory | type
+:----: | :----:| :----:
+asset | yes | STRING 
+
+#### response
+``` js 
+{
+    "code": 200,
+    "message": "success",
+    "response": {
+        "asset": "bnb",
+        "assetName": "Binance Coin",
+        "currentAssetAmount": 27.95,
+        "currentUsdtAmount": 61742.23,
+        "currentAssetAmountInUsd": 7316.192,
+        "minimumBuy": 500,
+        "minimumSell": 500,
+        "fee": 0.0025,
+        "pricePrecision": 2
+    }
+}
+```
+
 ### GET /v1/spot-order/transaction/asset-list
 #### Description
 Get asset list.
@@ -574,34 +602,6 @@ page |  no | INTEGER
             "totalPages": 1,
             "limit": 2,
         }
-    }
-}
-```
-
-### GET /v1/trade/info/:asset
-#### Description
-Get trade info.
-
-#### params
-name | mandatory | type
-:----: | :----:| :----:
-asset | yes | STRING 
-
-#### response
-``` js 
-{
-    "code": 200,
-    "message": "success",
-    "response": {
-        "asset": "bnb",
-        "assetName": "Binance Coin",
-        "currentAssetAmount": 27.95,
-        "currentUsdtAmount": 61742.23,
-        "currentAssetAmountInUsd": 7316.192,
-        "minimumBuy": 500,
-        "minimumSell": 500,
-        "fee": 0.0025,
-        "pricePrecision": 2
     }
 }
 ```
