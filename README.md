@@ -232,14 +232,53 @@ Get user assets and asset summary.
 }
 ```
 
+### GET /v1/spot-order/transaction/asset-list
+#### Description
+Get asset list.
+
+#### query
+name | mandatory | type
+:----: | :----:| :----:
+isListed | yes | INTEGER
+
+#### response
+``` js 
+{
+    "code": 200,
+    "message": "success",
+    "response": [
+        {
+            "asset": "ada",
+            "name": "Cardano"
+        },
+        {
+            "asset": "bch",
+            "name": "Bitcoin Cash"
+        },
+        {
+            "asset": "bnb",
+            "name": "Binance Coin"
+        },
+        {
+            "asset": "ltc",
+            "name": "Litecoin"
+        }
+    ]
+}
+```
 
 ### GET /v1/spot-order/transaction/pending-waiting
 #### Description
 Get open order limit sell.
 
 #### query
-* limit: INTEGER (default 10)
-* page: INTEGER (default 1)
+name | mandatory | type
+:----: | :----:| :----:
+asset | yes | STRING 
+limit | no  | INTEGER 
+page |  no | INTEGER 
+* limit: default 10
+* page: default 1
 
 #### response
 ``` js 
@@ -281,8 +320,13 @@ Get open order limit sell.
 Get open order limit sell.
 
 #### query
-* limit: INTEGER (default 10)
-* page: INTEGER (default 1)
+name | mandatory | type
+:----: | :----:| :----:
+asset | yes | STRING 
+limit | no  | INTEGER 
+page |  no | INTEGER 
+* limit: default 10
+* page: default 1
 
 #### response
 ``` js 
@@ -349,10 +393,15 @@ Get open order limit sell.
 Get open order limit sell.
 
 #### query
-* asset: STRING (btc, etc.)
-* side: STRING (buy,sell)
-* limit: INTEGER (default 10)
-* page: INTEGER (default 1)
+name | mandatory | type
+:----: | :----:| :----:
+asset | yes | STRING 
+side | no | STRING
+limit | no  | INTEGER 
+page |  no | INTEGER 
+* side:  default All
+* limit:  default 10
+* page:  default 1
 
 #### response
 ``` js 
@@ -390,13 +439,43 @@ Get open order limit sell.
 }
 ```
 
+### GET /v1/trade/info/:asset
+#### Description
+Get trade info.
+
+#### params
+name | mandatory | type
+:----: | :----:| :----:
+asset | yes | STRING 
+
+#### response
+``` js 
+{
+    "code": 200,
+    "message": "success",
+    "response": {
+        "asset": "bnb",
+        "assetName": "Binance Coin",
+        "currentAssetAmount": 27.95,
+        "currentUsdtAmount": 61742.23,
+        "currentAssetAmountInUsd": 7316.192,
+        "minimumBuy": 500,
+        "minimumSell": 500,
+        "fee": 0.0025,
+        "pricePrecision": 2
+    }
+}
+```
+
 ### POST /v1/process-order-market-buy
 #### Description
 Open order market buy.
 
 #### body
-* asset: STRING
-* usdtAmount: DOUBLE 
+name | mandatory | type
+:----: | :----:| :----:
+asset | yes | STRING 
+usdtAmount | yes | DOUBLE
 
 #### response
 ``` js 
@@ -411,8 +490,10 @@ Open order market buy.
 Open order market sell.
 
 #### body
-* asset: STRING
-* assetAmount: DOUBLE 
+name | mandatory | type
+:----: | :----:| :----:
+asset | yes | STRING 
+assetAmount | yes | DOUBLE
 
 #### response
 ``` js 
@@ -427,9 +508,11 @@ Open order market sell.
 Open order limit buy.
 
 #### body
-* asset: STRING
-* usdtAmount: DOUBLE 
-* orderPrice: DOUBLE 
+name | mandatory | type
+:----: | :----:| :----:
+asset | yes | STRING 
+usdtAmount | yes | DOUBLE
+orderPrice | yes | DOUBLE
 
 #### response
 ``` js 
@@ -444,9 +527,11 @@ Open order limit buy.
 Open order limit sell.
 
 #### body
-* asset: STRING
-* assetAmount: DOUBLE 
-* orderPrice: DOUBLE 
+name | mandatory | type
+:----: | :----:| :----:
+asset | yes | STRING 
+assetAmount | yes | DOUBLE
+orderPrice | yes | DOUBLE
 
 #### response
 ``` js 
@@ -458,13 +543,15 @@ Open order limit sell.
 
 ### POST /v1/process-order-stop-buy
 #### Description
-Open order stop buy.
+Open order stop limit buy.
 
 #### body
-* asset: STRING
-* usdtAmount: DOUBLE 
-* orderPrice: DOUBLE 
-* triggerPrice: DOUBLE
+name | mandatory | type
+:----: | :----:| :----:
+asset | yes | STRING 
+usdtAmount | yes | DOUBLE
+orderPrice | yes | DOUBLE
+triggerPrice | yes | DOUBLE
 
 #### response
 ``` js 
@@ -476,13 +563,15 @@ Open order stop buy.
 
 ### POST /v1/process-order-stop-sell
 #### Description
-Open order stop sell.
+Open order stop limit sell.
 
 #### body
-* asset: STRING
-* assetAmount: DOUBLE 
-* orderPrice: DOUBLE 
-* triggerPrice: DOUBLE
+name | mandatory | type
+:----: | :----:| :----:
+asset | yes | STRING 
+assetAmount | yes | DOUBLE
+orderPrice | yes | DOUBLE
+triggerPrice | yes | DOUBLE
 
 #### response
 ``` js 
@@ -494,10 +583,12 @@ Open order stop sell.
 
 ### POST /v1/cancel-order
 #### Description
-Open order limit sell.
+cancel order.
 
 #### body
-* orderId: STRING
+name | mandatory | type
+:----: | :----:| :----:
+orderId | yes | STRING 
 
 #### response
 ``` js 
