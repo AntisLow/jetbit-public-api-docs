@@ -60,6 +60,8 @@ Please check the `Permissions` before calling the API.
 * [GET /v1/asset-statuses](#get-v1asset-statuses)
 * [GET /v1/user-account/info](#get-v1user-accountinfo)
 * [GET /v1/spot-user-assets](#get-v1spot-user-assets)
+* [GET /v1/depth/:asset](#get-v1depth)
+* [GET /v1/data-feed/:asset](#get-v1data-feedasset)
 * [GET /v1/spot-order/transaction/asset-list](#get-v1spot-ordertransactionasset-list)
 * [GET /v1/spot-order/transaction/pending-waiting](#get-v1spot-ordertransactionpending-waiting)
 * [GET /v1/spot-order/transaction/finished-canceled](#get-v1spot-ordertransactionfinished-canceled)
@@ -246,6 +248,124 @@ Get user assets and asset summary.
                 "inOrder": 0,
                 "inWithdraw": 0
             },
+        ]
+    }
+}
+```
+
+### GET /v1/data-feed/:asset
+#### Description
+Get data feed asset.
+
+#### params
+name | mandatory | type
+:----: | :----:| :----:
+asset | yes | STRING 
+
+#### query
+name | mandatory | type
+:----: | :----:| :----:
+timeFrame | yes | STRING 
+unixStartDate | yes | TIMESTAMP 
+unixEndDate | yes | TIMESTAMP 
+* timeFrame: such as M1, M5, M15, M30, H1, H4, D1, W1, MM1
+
+#### response
+``` js 
+{
+    "code": 200,
+    "status": "success",
+    "response": {
+        "bids": [
+            [
+                217,
+                17.04
+            ],
+            [
+                216.9,
+                28.05
+            ],
+            [
+                216.8,
+                27.2
+            ],
+            [
+                216.7,
+                22.15
+            ]
+        ],
+        "asks": [
+            [
+                217.1,
+                88.72
+            ],
+            [
+                217.2,
+                253.15
+            ],
+            [
+                217.3,
+                199.88
+            ],
+            [
+                217.4,
+                215.98
+            ]
+        ]
+    }
+}
+```
+
+### GET /v1/depth/:asset
+#### Description
+Get depth chart asset.
+
+#### params
+name | mandatory | type
+:----: | :----:| :----:
+asset | yes | STRING 
+
+#### response
+``` js 
+{
+    "code": 200,
+    "status": "success",
+    "response": {
+        "bids": [
+            [
+                217,
+                17.04
+            ],
+            [
+                216.9,
+                28.05
+            ],
+            [
+                216.8,
+                27.2
+            ],
+            [
+                216.7,
+                22.15
+            ]
+        ],
+        "asks": [
+            [
+                217.1,
+                88.72
+            ],
+            [
+                217.2,
+                253.15
+            ],
+            [
+                217.3,
+                199.88
+            ],
+            [
+                217.4,
+                215.98
+            ]
         ]
     }
 }
