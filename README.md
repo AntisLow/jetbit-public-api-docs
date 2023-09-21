@@ -53,6 +53,7 @@ Please check the `Permissions` before calling the API.
 # API Document
 
 ### Endpoints
+#### GET
 * [GET /v1/status](#get-v1status)
 * [GET /v1/status](#get-v1status)
 * [GET /v1/server-time](#get-v1server-time)
@@ -63,8 +64,9 @@ Please check the `Permissions` before calling the API.
 * [GET /v1/spot-order/transaction/pending-waiting](#get-v1spot-ordertransactionpending-waiting)
 * [GET /v1/spot-order/transaction/finished-canceled](#get-v1spot-ordertransactionfinished-canceled)
 * [GET /v1/spot-order/transaction/trade-history](#get-v1spot-ordertransactiontrade-history)
-* [GET /v1/trade/info/:asset](#get-v1tradeinfoasset)
+* [GET /v1/trade/info/:asset](#get-v1tradeinfo:asset)
 
+#### POST
 * [POST /v1/process-order-market-buy](#post-v1process-order-market-buy)
 * [POST /v1/process-order-market-sell](#post-v1process-order-market-sell)
 * [POST /v1/process-order-limit-buy](#post-v1process-order-limit-buy)
@@ -72,7 +74,6 @@ Please check the `Permissions` before calling the API.
 * [POST /v1/process-order-stop-buy](#post-v1process-order-stop-buy)
 * [POST /v1/process-order-stop-sell](#post-v1process-order-stop-sell)
 * [POST /v1/cancel-order](#post-v1cancel-order)
-
 ### Response form server
 Every response have `code` and `message`. And `response` is data response. If code isn't **200**, `response` will not return. Please read `message`.
 ``` js 
