@@ -54,6 +54,16 @@ Please check the `Permissions` before calling the API.
 
 ### Endpoints
 [GET /v1/status](#get-v1status)
+[GET /v1/status](#get-v1status)
+[GET /v1/server-time](#get-v1server-time)
+[GET /v1/asset-statuses](#get-v1asset-statuses)
+[GET /v1/user-account/info](#get-v1user-accountinfo)
+[GET /v1/spot-user-assets](#get-v1spot-user-assets)
+[GET /v1/spot-order/transaction/asset-list](#get-v1spot-ordertransactionasset-list)
+[GET /v1/spot-order/transaction/pending-waiting](#get-v1spot-ordertransactionpending-waiting)
+[GET /v1/spot-order/transaction/finished-canceled](#get-v1spot-ordertransactionfinished-canceled)
+[GET /v1/spot-order/transaction/trade-history](#get-v1spot-ordertransactiontrade-history)
+[GET /v1/trade/info/:asset](#get-v1tradeinfo:asset)
 
 ### Response form server
 Every response have `code` and `message`. And `response` is data response. If code isn't **200**, `response` will not return. Please read `message`.
