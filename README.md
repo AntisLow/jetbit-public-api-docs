@@ -47,7 +47,13 @@ curl -X POST \
 -d '{“ts” : “1693290930000”,“signature” : “503380b8cf5f64755308621263df1d4b459cb0e4be3e1e6804676f99a4b28e21"}'
 ```
 
+### !! WARNING !!
+Please check the `Permissions` before calling the API.
+
 # API Document
+
+### Endpoints
+[GET /v1/status](#get-v1status)
 
 ### Response form server
 Every response have `code` and `message`. And `response` is data response. If code isn't **200**, `response` will not return. Please read `message`.
