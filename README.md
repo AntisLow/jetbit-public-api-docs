@@ -64,7 +64,7 @@ Please check the `Permissions` before calling the API.
 * [GET /v1/spot-order/transaction/pending-waiting](#get-v1spot-ordertransactionpending-waiting)
 * [GET /v1/spot-order/transaction/finished-canceled](#get-v1spot-ordertransactionfinished-canceled)
 * [GET /v1/spot-order/transaction/trade-history](#get-v1spot-ordertransactiontrade-history)
-* [GET /v1/trade/info/:asset](#get-v1tradeinfo:asset)
+* [GET /v1/trade/info/:asset](#get-v1tradeinfoasset)
 
 #### POST
 * [POST /v1/process-order-market-buy](#post-v1process-order-market-buy)
