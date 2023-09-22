@@ -764,4 +764,4 @@ not_allow_to_trade | Not allow to trade.
 user_not_found | User not found.
 access_token_not_found | Access token(x-jbt-key) not found.
 public_api_key_not_found | Public api key not found.
-public_api_key_no_permission | Public api key had no permission.
+public_api_key_permission_denied | Public api key had no permission.
