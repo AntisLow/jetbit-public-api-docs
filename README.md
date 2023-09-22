@@ -86,7 +86,7 @@ Please check the `Permissions` before calling the API.
 * [POST /v1/process-order-stop-sell](#post-hostv1process-order-stop-sell)
 * [POST /v1/cancel-order](#post-hostv1cancel-order)
 ### Response form server
-Every response have `code` and `message`. And `response` is data response. If code isn't **200**, `response` will not return. Please read `message`.
+Every response have `code` and `message`. And `response` is data response. If code isn't **200**, `response` will not returned. Please read the `message`.
 ``` js 
 {
     "code": 200,
@@ -105,7 +105,7 @@ Every response have `code` and `message`. And `response` is data response. If co
 
 ### GET {host}/v1/status
 #### Description
-Check server status. When status `code` is `not` **200**, Server is not ready.
+Check the server status. When status `code` is `not` **200**, the server is not ready.
 
 #### Response
 ``` js 
