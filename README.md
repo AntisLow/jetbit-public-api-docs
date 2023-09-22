@@ -1,9 +1,9 @@
 #  JetBit Public API Documents
 
 ## Table of Contents
-[Constructing the request](#constructing-the-request)
-[API Documents](#api-document)
-[Error Messages](#error-messages)
+* [Constructing the request](#constructing-the-request)
+* [API Documents](#api-document)
+* [Error Messages](#error-messages)
 
 ## Constructing the request
 ### GET/POST request
