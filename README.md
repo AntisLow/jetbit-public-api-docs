@@ -61,7 +61,6 @@ Please check the `Permissions` before calling the API.
 ### Endpoints
 #### GET
 * [GET /v1/status](#get-v1status)
-* [GET /v1/status](#get-v1status)
 * [GET /v1/server-time](#get-v1server-time)
 * [GET /v1/asset-statuses](#get-v1asset-statuses)
 * [GET /v1/user-account/info](#get-v1user-accountinfo)
@@ -104,10 +103,7 @@ Every response have `code` and `message`. And `response` is data response. If co
 #### Description
 Check server status. When status `code` is `not` **200**, Server is not ready.
 
-#### query
-* none 
-
-#### response
+#### Response
 ``` js 
 {
     "code": 200,
@@ -119,10 +115,7 @@ Check server status. When status `code` is `not` **200**, Server is not ready.
 #### Description
 Get server timestamp.
 
-#### query
-* none 
-
-#### response
+#### Response
 ``` js 
 {
     "code": 200,
@@ -137,10 +130,7 @@ Get server timestamp.
 #### Description
 Get asset statuses.
 
-#### query
-* none 
-
-#### response
+#### Response
 ``` js 
 {
     "code": 200,
@@ -185,10 +175,7 @@ Get asset statuses.
 #### Description
 Get user account info.
 
-#### query
-* none 
-
-#### response
+#### Response
 ``` js 
 {
     "code": 200,
@@ -227,10 +214,7 @@ Get user account info.
 #### Description
 Get user assets and asset summary.
 
-#### query
-* none 
-
-#### response
+#### Response
 ``` js 
 {
     "code": 200,
@@ -263,20 +247,20 @@ Get user assets and asset summary.
 #### Description
 Get data feed by asset.
 
-#### params
-name | required | type
+#### Params
+Name | Required | Type
 :----: | :----:| :----:
 asset | yes | STRING 
 
-#### query
-name | required | type
+#### Query
+Name | Required | Type
 :----: | :----:| :----:
 timeFrame | yes | STRING 
 unixStartDate | yes | TIMESTAMP 
 unixEndDate | yes | TIMESTAMP 
 * timeFrame: such as M1, M5, M15, M30, H1, H4, D1, W1, MM1
 
-#### response
+#### Response
 ``` js 
 {
     "code": 200,
@@ -326,12 +310,12 @@ unixEndDate | yes | TIMESTAMP
 #### Description
 Get depth chart by asset.
 
-#### params
-name | required | type
+#### Params
+Name | Required | Type
 :----: | :----:| :----:
 asset | yes | STRING 
 
-#### response
+#### Response
 ``` js 
 {
     "code": 200,
@@ -381,12 +365,12 @@ asset | yes | STRING
 #### Description
 Get trade info by asset.
 
-#### params
-name | required | type
+#### Params
+Name | Required | Type
 :----: | :----:| :----:
 asset | yes | STRING 
 
-#### response
+#### Response
 ``` js 
 {
     "code": 200,
@@ -409,12 +393,12 @@ asset | yes | STRING
 #### Description
 Get asset list.
 
-#### query
-name | required | type
+#### Query
+Name | Required | Type
 :----: | :----:| :----:
 isListed | yes | INTEGER
 
-#### response
+#### Response
 ``` js 
 {
     "code": 200,
@@ -444,16 +428,14 @@ isListed | yes | INTEGER
 #### Description
 Get transaction pending and waiting.
 
-#### query
-name | required | type
-:----: | :----:| :----:
-asset | yes | STRING 
-limit | no  | INTEGER 
-page |  no | INTEGER 
-* limit: default 10
-* page: default 1
+#### Query
+Name | Required | Type | Default
+:----: | :----:| :----: | :----:
+asset | yes | STRING  | - 
+limit | no  | INTEGER | 10
+page |  no | INTEGER | 1
 
-#### response
+#### Response
 ``` js 
 {
     "code": 200,
@@ -492,16 +474,14 @@ page |  no | INTEGER
 #### Description
 Get transaction finished and canceled.
 
-#### query
-name | required | type
-:----: | :----:| :----:
-asset | yes | STRING 
-limit | no  | INTEGER 
-page |  no | INTEGER 
-* limit: default 10
-* page: default 1
+#### Query
+Name | Required | Type| Default
+:----: | :----:| :----:| :----:
+asset | yes | STRING | -
+limit | no  | INTEGER | 10
+page |  no | INTEGER | 1
 
-#### response
+#### Response
 ``` js 
 {
     "code": 200,
@@ -565,18 +545,15 @@ page |  no | INTEGER
 #### Description
 Get trade history.
 
-#### query
-name | required | type
-:----: | :----:| :----:
-asset | yes | STRING 
-side | no | STRING
-limit | no  | INTEGER 
-page |  no | INTEGER 
-* side:  default All
-* limit:  default 10
-* page:  default 1
+#### Query
+Name | Required | Type | Default
+:----: | :----:| :----: | :----:
+asset | yes | STRING  | - 
+side | no | STRING | All
+limit | no  | INTEGER | 10
+page |  no | INTEGER  | 1
 
-#### response
+#### Response
 ``` js 
 {
     "code": 200,
@@ -617,12 +594,12 @@ page |  no | INTEGER
 Open order market buy.
 
 #### body
-name | required | type
+Name | Required | Type
 :----: | :----:| :----:
 asset | yes | STRING 
 usdtAmount | yes | DOUBLE
 
-#### response
+#### Response
 ``` js 
 {
     "code": 200,
@@ -635,12 +612,12 @@ usdtAmount | yes | DOUBLE
 Open order market sell.
 
 #### body
-name | required | type
+Name | Required | Type
 :----: | :----:| :----:
 asset | yes | STRING 
 assetAmount | yes | DOUBLE
 
-#### response
+#### Response
 ``` js 
 {
     "code": 200,
@@ -653,13 +630,13 @@ assetAmount | yes | DOUBLE
 Open order limit buy.
 
 #### body
-name | required | type
+Name | Required | Type
 :----: | :----:| :----:
 asset | yes | STRING 
 usdtAmount | yes | DOUBLE
 orderPrice | yes | DOUBLE
 
-#### response
+#### Response
 ``` js 
 {
     "code": 200,
@@ -672,13 +649,13 @@ orderPrice | yes | DOUBLE
 Open order limit sell.
 
 #### body
-name | required | type
+Name | Required | Type
 :----: | :----:| :----:
 asset | yes | STRING 
 assetAmount | yes | DOUBLE
 orderPrice | yes | DOUBLE
 
-#### response
+#### Response
 ``` js 
 {
     "code": 200,
@@ -691,14 +668,14 @@ orderPrice | yes | DOUBLE
 Open order stop limit buy.
 
 #### body
-name | required | type
+Name | Required | Type
 :----: | :----:| :----:
 asset | yes | STRING 
 usdtAmount | yes | DOUBLE
 orderPrice | yes | DOUBLE
 triggerPrice | yes | DOUBLE
 
-#### response
+#### Response
 ``` js 
 {
     "code": 200,
@@ -711,14 +688,14 @@ triggerPrice | yes | DOUBLE
 Open order stop limit sell.
 
 #### body
-name | required | type
+Name | Required | Type
 :----: | :----:| :----:
 asset | yes | STRING 
 assetAmount | yes | DOUBLE
 orderPrice | yes | DOUBLE
 triggerPrice | yes | DOUBLE
 
-#### response
+#### Response
 ``` js 
 {
     "code": 200,
@@ -731,11 +708,11 @@ triggerPrice | yes | DOUBLE
 cancel order.
 
 #### body
-name | required | type
+Name | Required | Type
 :----: | :----:| :----:
 orderId | yes | STRING 
 
-#### response
+#### Response
 ``` js 
 {
     "code": 200,
