@@ -1,5 +1,11 @@
 #  JetBit Public API Documents
 
+## Table of Contents
+[Constructing the request](#constructing-the-request)
+[API Documents](#api-document)
+[Error Messages](#error-messages)
+
+## Constructing the request
 ### GET/POST request
 * GET request require parameters as query string in the URL (e.g. ?limit=10&asset=btc).
 * POST request require JSON payload ( application/json )
@@ -50,7 +56,7 @@ curl -X POST \
 ### !! WARNING !!
 Please check the `Permissions` before calling the API.
 
-# API Document
+# API Documents
 
 ### Endpoints
 #### GET
@@ -736,3 +742,26 @@ orderId | yes | STRING
     "message": "success"
 }
 ```
+
+# Error Messages
+Every error response must be have status 200 and `code 400`.
+Message | Description
+:----- | :-------
+bad_request | Invalid parameter.
+invalid_time_stamp | Invalid time stamp.
+invalid_signature | Invalid signature.
+invalid_minimum_amount_to_buy | Invalid minimum amount to buy.
+invalid_minimum_amount_to_sell | Invalid minimum amount to sell.
+usdt_balance_insufficient | Usdt balance insufficient.
+asset_balance_insufficient | Asset balance insufficient.
+order_price_is_more_than_price_impact | Order price is more than price impact.
+cannot_cancel_finished_order | Cannot cancel finished order.
+exceed_max_limit_order | Exceed max limit order.
+exceed_max_limit_asset | Exceed max limit asset.
+sell_market_impact | Sell market impact.
+buy_market_impact | Buy market impact.
+not_allow_to_trade | Not allow to trade.
+user_not_found | User not found.
+access_token_not_found | Access token(X-JBT-KEY) not found.
+public_api_key_not_found | Public api key not found.
+public_api_key_no_permission | Public api key had no permission.
