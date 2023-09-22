@@ -2,7 +2,7 @@
 
 ## Table of Contents
 * [Constructing the request](#constructing-the-request)
-* [API Documents](#api-document)
+* [API Documents](#api-documents)
 * [Error Messages](#error-messages)
 
 ## Constructing the request
