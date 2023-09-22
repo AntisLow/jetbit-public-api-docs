@@ -99,7 +99,7 @@ Every response have `code` and `message`. And `response` is data response. If co
 ```
 
 
-### GET /v1/status
+### GET {host}/v1/status
 #### Description
 Check server status. When status `code` is `not` **200**, Server is not ready.
 
@@ -111,7 +111,7 @@ Check server status. When status `code` is `not` **200**, Server is not ready.
 }
 ```
 
-### GET /v1/server-time
+### GET {host}/v1/server-time
 #### Description
 Get server timestamp.
 
@@ -126,7 +126,7 @@ Get server timestamp.
 }
 ```
 
-### GET /v1/asset-statuses
+### GET {host}/v1/asset-statuses
 #### Description
 Get asset statuses.
 
@@ -171,7 +171,7 @@ Get asset statuses.
 }
 ```
 
-### GET /v1/user-account/info
+### GET {host}/v1/user-account/info
 #### Description
 Get user account info.
 
@@ -210,7 +210,7 @@ Get user account info.
 }
 ```
 
-### GET /v1/spot-user-assets
+### GET {host}/v1/spot-user-assets
 #### Description
 Get user assets and asset summary.
 
@@ -243,7 +243,7 @@ Get user assets and asset summary.
 }
 ```
 
-### GET /v1/data-feed/:asset
+### GET {host}/v1/data-feed/:asset
 #### Description
 Get data feed by asset.
 
@@ -306,7 +306,7 @@ unixEndDate | yes | TIMESTAMP
 }
 ```
 
-### GET /v1/depth/:asset
+### GET {host}/v1/depth/:asset
 #### Description
 Get depth chart by asset.
 
@@ -361,7 +361,7 @@ asset | yes | STRING
 }
 ```
 
-### GET /v1/trade/info/:asset
+### GET {host}/v1/trade/info/:asset
 #### Description
 Get trade info by asset.
 
@@ -389,7 +389,7 @@ asset | yes | STRING
 }
 ```
 
-### GET /v1/spot-order/transaction/asset-list
+### GET {host}/v1/spot-order/transaction/asset-list
 #### Description
 Get asset list.
 
@@ -424,7 +424,7 @@ isListed | yes | INTEGER
 }
 ```
 
-### GET /v1/spot-order/transaction/pending-waiting
+### GET {host}/v1/spot-order/transaction/pending-waiting
 #### Description
 Get transaction pending and waiting.
 
@@ -470,7 +470,7 @@ page |  no | INTEGER | 1
 }
 ```
 
-### GET /v1/spot-order/transaction/finished-canceled
+### GET {host}/v1/spot-order/transaction/finished-canceled
 #### Description
 Get transaction finished and canceled.
 
@@ -541,7 +541,7 @@ page |  no | INTEGER | 1
 }
 ```
 
-### GET /v1/spot-order/transaction/trade-history
+### GET {host}/v1/spot-order/transaction/trade-history
 #### Description
 Get trade history.
 
@@ -589,7 +589,7 @@ page |  no | INTEGER  | 1
 }
 ```
 
-### POST /v1/process-order-market-buy
+### POST {host}/v1/process-order-market-buy
 #### Description
 Open order market buy.
 
@@ -607,7 +607,7 @@ usdtAmount | yes | DOUBLE
 }
 ```
 
-### POST /v1/process-order-market-sell
+### POST {host}/v1/process-order-market-sell
 #### Description
 Open order market sell.
 
@@ -625,7 +625,7 @@ assetAmount | yes | DOUBLE
 }
 ```
 
-### POST /v1/process-order-limit-buy
+### POST {host}/v1/process-order-limit-buy
 #### Description
 Open order limit buy.
 
@@ -644,7 +644,7 @@ orderPrice | yes | DOUBLE
 }
 ```
 
-### POST /v1/process-order-limit-sell
+### POST {host}/v1/process-order-limit-sell
 #### Description
 Open order limit sell.
 
@@ -663,7 +663,7 @@ orderPrice | yes | DOUBLE
 }
 ```
 
-### POST /v1/process-order-stop-buy
+### POST {host}/v1/process-order-stop-buy
 #### Description
 Open order stop limit buy.
 
@@ -683,7 +683,7 @@ triggerPrice | yes | DOUBLE
 }
 ```
 
-### POST /v1/process-order-stop-sell
+### POST {host}/v1/process-order-stop-sell
 #### Description
 Open order stop limit sell.
 
@@ -703,7 +703,7 @@ triggerPrice | yes | DOUBLE
 }
 ```
 
-### POST /v1/cancel-order
+### POST {host}/v1/cancel-order
 #### Description
 cancel order.
 
@@ -729,7 +729,7 @@ invalid_time_stamp | Invalid time stamp.
 invalid_signature | Invalid signature.
 invalid_minimum_amount_to_buy | Invalid minimum amount to buy.
 invalid_minimum_amount_to_sell | Invalid minimum amount to sell.
-usdt_balance_insufficient | USDT,usdt balance insufficient.
+usdt_balance_insufficient | USDT balance insufficient.
 asset_balance_insufficient | Asset balance insufficient.
 order_price_is_more_than_price_impact | Order price is more than price impact.
 cannot_cancel_finished_order | Cannot cancel finished order.
