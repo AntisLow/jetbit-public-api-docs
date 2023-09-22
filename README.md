@@ -7,7 +7,7 @@
 * [Error Messages](#error-messages)
 
 ## Base URL
-* The base URL is https://
+* The base URL is 
 
 ## Constructing the request
 ### GET/POST request
@@ -64,27 +64,27 @@ Please check the `Permissions` before calling the API.
 
 ### Endpoints
 #### GET
-* [GET /v1/status](#get-v1status)
-* [GET /v1/server-time](#get-v1server-time)
-* [GET /v1/asset-statuses](#get-v1asset-statuses)
-* [GET /v1/user-account/info](#get-v1user-accountinfo)
-* [GET /v1/spot-user-assets](#get-v1spot-user-assets)
-* [GET /v1/depth/:asset](#get-v1depth)
-* [GET /v1/data-feed/:asset](#get-v1data-feedasset)
-* [GET /v1/trade/info/:asset](#get-v1tradeinfoasset)
-* [GET /v1/spot-order/transaction/asset-list](#get-v1spot-ordertransactionasset-list)
-* [GET /v1/spot-order/transaction/pending-waiting](#get-v1spot-ordertransactionpending-waiting)
-* [GET /v1/spot-order/transaction/finished-canceled](#get-v1spot-ordertransactionfinished-canceled)
-* [GET /v1/spot-order/transaction/trade-history](#get-v1spot-ordertransactiontrade-history)
+* [GET /v1/status](#get-hostv1status)
+* [GET /v1/server-time](#get-hostv1server-time)
+* [GET /v1/asset-statuses](#get-hostv1asset-statuses)
+* [GET /v1/user-account/info](#get-hostv1user-accountinfo)
+* [GET /v1/spot-user-assets](#get-hostv1spot-user-assets)
+* [GET /v1/depth/:asset](#get-hostv1depth)
+* [GET /v1/data-feed/:asset](#get-hostv1data-feedasset)
+* [GET /v1/trade/info/:asset](#get-hostv1tradeinfoasset)
+* [GET /v1/spot-order/transaction/asset-list](#get-hostv1spot-ordertransactionasset-list)
+* [GET /v1/spot-order/transaction/pending-waiting](#get-hostv1spot-ordertransactionpending-waiting)
+* [GET /v1/spot-order/transaction/finished-canceled](#get-hostv1spot-ordertransactionfinished-canceled)
+* [GET /v1/spot-order/transaction/trade-history](#get-hostv1spot-ordertransactiontrade-history)
 
 #### POST
-* [POST /v1/process-order-market-buy](#post-v1process-order-market-buy)
-* [POST /v1/process-order-market-sell](#post-v1process-order-market-sell)
-* [POST /v1/process-order-limit-buy](#post-v1process-order-limit-buy)
-* [POST /v1/process-order-limit-sell](#post-v1process-order-limit-sell)
-* [POST /v1/process-order-stop-buy](#post-v1process-order-stop-buy)
-* [POST /v1/process-order-stop-sell](#post-v1process-order-stop-sell)
-* [POST /v1/cancel-order](#post-v1cancel-order)
+* [POST /v1/process-order-market-buy](#post-hostv1process-order-market-buy)
+* [POST /v1/process-order-market-sell](#post-hostv1process-order-market-sell)
+* [POST /v1/process-order-limit-buy](#post-hostv1process-order-limit-buy)
+* [POST /v1/process-order-limit-sell](#post-hostv1process-order-limit-sell)
+* [POST /v1/process-order-stop-buy](#post-hostv1process-order-stop-buy)
+* [POST /v1/process-order-stop-sell](#post-hostv1process-order-stop-sell)
+* [POST /v1/cancel-order](#post-hostv1cancel-order)
 ### Response form server
 Every response have `code` and `message`. And `response` is data response. If code isn't **200**, `response` will not return. Please read `message`.
 ``` js 
