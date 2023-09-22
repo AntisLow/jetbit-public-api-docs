@@ -725,7 +725,7 @@ orderId | yes | STRING
 ```
 
 # Error Messages
-Every error response must be have status 200 and `code 400`.
+Every error response must have status code 400.
 Message | Description
 :----- | :-------
 bad_request | Invalid parameter,body or query.
