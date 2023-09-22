@@ -14,7 +14,7 @@
 Authentication requires `API KEY` and `API SECRET`. Every request to the server must contain the following in the request header.
 * Accept : application/json
 * Content-type : application/json
-* X-JBT-KEY : `API KEY` 
+* x-jbt-key : `API KEY` 
 
 ### Signature ( POST )
 Generate the signature from the JSON payload using HMAC `SHA-256` with `base64`. Use the `API SECRET` as the `secret`. Timestamp include milliseconds.
@@ -22,14 +22,14 @@ Generate the signature from the JSON payload using HMAC `SHA-256` with `base64`.
 #### Example payload
  ``` js
 { 
-    “ts” : 1693290930000 
+    “timeStamp” : "1693290930000" 
 }
  ```
 
 #### Example payload with signature
 ``` js
 {
-    “ts” : “1693290930000”,
+    “timeStamp” : “1693290930000”,
     “signature” : “503380b8cf5f64755308621263df1d4b459cb0e4be3e1e6804676f99a4b28e21"
 }
 ```
@@ -102,7 +102,7 @@ Every response have `code` and `message`. And `response` is data response. If co
 
 ### GET /v1/status
 #### Description
-Check server status.When status `code` is `not` **200**, Server is not ready.
+Check server status. When status `code` is `not` **200**, Server is not ready.
 
 #### query
 * none 
@@ -264,12 +264,12 @@ Get user assets and asset summary.
 Get data feed asset.
 
 #### params
-name | mandatory | type
+name | required | type
 :----: | :----:| :----:
 asset | yes | STRING 
 
 #### query
-name | mandatory | type
+name | required | type
 :----: | :----:| :----:
 timeFrame | yes | STRING 
 unixStartDate | yes | TIMESTAMP 
@@ -327,7 +327,7 @@ unixEndDate | yes | TIMESTAMP
 Get depth chart asset.
 
 #### params
-name | mandatory | type
+name | required | type
 :----: | :----:| :----:
 asset | yes | STRING 
 
@@ -382,7 +382,7 @@ asset | yes | STRING
 Get trade info.
 
 #### params
-name | mandatory | type
+name | required | type
 :----: | :----:| :----:
 asset | yes | STRING 
 
@@ -410,7 +410,7 @@ asset | yes | STRING
 Get asset list.
 
 #### query
-name | mandatory | type
+name | required | type
 :----: | :----:| :----:
 isListed | yes | INTEGER
 
@@ -442,10 +442,10 @@ isListed | yes | INTEGER
 
 ### GET /v1/spot-order/transaction/pending-waiting
 #### Description
-Get open order limit sell.
+Get transaction pending and waiting.
 
 #### query
-name | mandatory | type
+name | required | type
 :----: | :----:| :----:
 asset | yes | STRING 
 limit | no  | INTEGER 
@@ -490,10 +490,10 @@ page |  no | INTEGER
 
 ### GET /v1/spot-order/transaction/finished-canceled
 #### Description
-Get open order limit sell.
+Get transaction finished and canceled.
 
 #### query
-name | mandatory | type
+name | required | type
 :----: | :----:| :----:
 asset | yes | STRING 
 limit | no  | INTEGER 
@@ -563,10 +563,10 @@ page |  no | INTEGER
 
 ### GET /v1/spot-order/transaction/trade-history
 #### Description
-Get open order limit sell.
+Get trade history.
 
 #### query
-name | mandatory | type
+name | required | type
 :----: | :----:| :----:
 asset | yes | STRING 
 side | no | STRING
@@ -617,7 +617,7 @@ page |  no | INTEGER
 Open order market buy.
 
 #### body
-name | mandatory | type
+name | required | type
 :----: | :----:| :----:
 asset | yes | STRING 
 usdtAmount | yes | DOUBLE
@@ -635,7 +635,7 @@ usdtAmount | yes | DOUBLE
 Open order market sell.
 
 #### body
-name | mandatory | type
+name | required | type
 :----: | :----:| :----:
 asset | yes | STRING 
 assetAmount | yes | DOUBLE
@@ -653,7 +653,7 @@ assetAmount | yes | DOUBLE
 Open order limit buy.
 
 #### body
-name | mandatory | type
+name | required | type
 :----: | :----:| :----:
 asset | yes | STRING 
 usdtAmount | yes | DOUBLE
@@ -672,7 +672,7 @@ orderPrice | yes | DOUBLE
 Open order limit sell.
 
 #### body
-name | mandatory | type
+name | required | type
 :----: | :----:| :----:
 asset | yes | STRING 
 assetAmount | yes | DOUBLE
@@ -691,7 +691,7 @@ orderPrice | yes | DOUBLE
 Open order stop limit buy.
 
 #### body
-name | mandatory | type
+name | required | type
 :----: | :----:| :----:
 asset | yes | STRING 
 usdtAmount | yes | DOUBLE
@@ -711,7 +711,7 @@ triggerPrice | yes | DOUBLE
 Open order stop limit sell.
 
 #### body
-name | mandatory | type
+name | required | type
 :----: | :----:| :----:
 asset | yes | STRING 
 assetAmount | yes | DOUBLE
@@ -731,7 +731,7 @@ triggerPrice | yes | DOUBLE
 cancel order.
 
 #### body
-name | mandatory | type
+name | required | type
 :----: | :----:| :----:
 orderId | yes | STRING 
 
@@ -762,6 +762,6 @@ sell_market_impact | Sell market impact.
 buy_market_impact | Buy market impact.
 not_allow_to_trade | Not allow to trade.
 user_not_found | User not found.
-access_token_not_found | Access token(X-JBT-KEY) not found.
+access_token_not_found | Access token(x-jbt-key) not found.
 public_api_key_not_found | Public api key not found.
 public_api_key_no_permission | Public api key had no permission.
