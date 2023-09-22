@@ -261,7 +261,7 @@ Get user assets and asset summary.
 
 ### GET /v1/data-feed/:asset
 #### Description
-Get data feed asset.
+Get data feed by asset.
 
 #### params
 name | required | type
@@ -324,7 +324,7 @@ unixEndDate | yes | TIMESTAMP
 
 ### GET /v1/depth/:asset
 #### Description
-Get depth chart asset.
+Get depth chart by asset.
 
 #### params
 name | required | type
@@ -379,7 +379,7 @@ asset | yes | STRING
 
 ### GET /v1/trade/info/:asset
 #### Description
-Get trade info.
+Get trade info by asset.
 
 #### params
 name | required | type
@@ -747,12 +747,12 @@ orderId | yes | STRING
 Every error response must be have status 200 and `code 400`.
 Message | Description
 :----- | :-------
-bad_request | Invalid parameter.
+bad_request | Invalid parameter,body or query.
 invalid_time_stamp | Invalid time stamp.
 invalid_signature | Invalid signature.
 invalid_minimum_amount_to_buy | Invalid minimum amount to buy.
 invalid_minimum_amount_to_sell | Invalid minimum amount to sell.
-usdt_balance_insufficient | Usdt balance insufficient.
+usdt_balance_insufficient | USDT,usdt balance insufficient.
 asset_balance_insufficient | Asset balance insufficient.
 order_price_is_more_than_price_impact | Order price is more than price impact.
 cannot_cancel_finished_order | Cannot cancel finished order.
