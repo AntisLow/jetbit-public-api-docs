@@ -1,9 +1,13 @@
 #  JetBit Public API Documents
 
 ## Table of Contents
+* [Base URL](#base-url)
 * [Constructing the request](#constructing-the-request)
 * [API Documents](#api-documents)
 * [Error Messages](#error-messages)
+
+## Base URL
+* The base URL is https://
 
 ## Constructing the request
 ### GET/POST request
