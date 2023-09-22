@@ -22,14 +22,14 @@ Generate the signature from the JSON payload using HMAC `SHA-256` with `base64`.
 #### Example payload
  ``` js
 { 
-    “timeStamp” : "1693290930000" 
+    “ts” : "1693290930000" 
 }
  ```
 
 #### Example payload with signature
 ``` js
 {
-    “timeStamp” : “1693290930000”,
+    “ts” : “1693290930000”,
     “signature” : “503380b8cf5f64755308621263df1d4b459cb0e4be3e1e6804676f99a4b28e21"
 }
 ```
