@@ -593,7 +593,7 @@ page |  no | INTEGER  | 1
 #### Description
 Open order market buy.
 
-#### body
+#### Body
 Name | Required | Type
 :----: | :----:| :----:
 asset | yes | STRING 
@@ -611,7 +611,7 @@ usdtAmount | yes | DOUBLE
 #### Description
 Open order market sell.
 
-#### body
+#### Body
 Name | Required | Type
 :----: | :----:| :----:
 asset | yes | STRING 
@@ -629,7 +629,7 @@ assetAmount | yes | DOUBLE
 #### Description
 Open order limit buy.
 
-#### body
+#### Body
 Name | Required | Type
 :----: | :----:| :----:
 asset | yes | STRING 
@@ -648,7 +648,7 @@ orderPrice | yes | DOUBLE
 #### Description
 Open order limit sell.
 
-#### body
+#### Body
 Name | Required | Type
 :----: | :----:| :----:
 asset | yes | STRING 
@@ -667,7 +667,7 @@ orderPrice | yes | DOUBLE
 #### Description
 Open order stop limit buy.
 
-#### body
+#### Body
 Name | Required | Type
 :----: | :----:| :----:
 asset | yes | STRING 
@@ -687,7 +687,7 @@ triggerPrice | yes | DOUBLE
 #### Description
 Open order stop limit sell.
 
-#### body
+#### Body
 Name | Required | Type
 :----: | :----:| :----:
 asset | yes | STRING 
@@ -707,7 +707,7 @@ triggerPrice | yes | DOUBLE
 #### Description
 cancel order.
 
-#### body
+#### Body
 Name | Required | Type
 :----: | :----:| :----:
 orderId | yes | STRING 
